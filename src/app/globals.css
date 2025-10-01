@@ -88,6 +88,14 @@ body {
 }
 .tiptap{
 
+  a{
+  @apply text-blue-600;
+    cursor:pointer;
+  
+  &:hover{
+   @apply underline;
+  }
+}
   /* IMAGE */
    img {
     display: block;
@@ -245,5 +253,33 @@ body {
       margin: 0;
     }
   }
-  
+}
+/* For mobile */
+.floating-threads {
+  display: none;
+}
+
+/* For desktop */
+.anchored-threads {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  right: 12px;
+  top: 0;
+  z-index: 30;
+}
+
+@media (max-width: 640px) {
+  .floating-threads {
+    display: block;
+    z-index: 30;
+  }
+
+  .anchored-threads {
+    display: none;
+  }
+}
+div[data-radix-popper-content-wrapper]{
+  z-index: 50 !important;
 }
