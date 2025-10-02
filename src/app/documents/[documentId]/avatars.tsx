@@ -65,8 +65,8 @@ const Avatar=({src,name}:AvatarProps)=>{
             <Image
             alt={name}
             src={src}
-              width={AVATAR_SIZE} 
-                height={AVATAR_SIZE} 
+              width={36} 
+                height={36} 
             className="rounded-full object-cover"
             />
         </div>
