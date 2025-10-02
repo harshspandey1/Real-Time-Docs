@@ -33,7 +33,7 @@ export function Room({ children }: { children: ReactNode }) {
 
     useEffect(()=>{
       fetchUsers();
-    },[])
+    },[fetchUsers])
 
 
   return (

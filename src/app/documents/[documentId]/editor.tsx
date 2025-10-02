@@ -29,7 +29,6 @@ import { Threads } from './threads';
 
 interface EditorProps{
     initialContent?:string|undefined;
-    offlineSupport_experimental:true,
 };
 
 export const Editor =({initialContent}:EditorProps)=>{
