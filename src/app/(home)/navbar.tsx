@@ -10,7 +10,7 @@ export const Navbar=()=>{
                 <Link href="/">
                 <Image src="/logo.svg" alt="logo" width={36} height={36}/>
                 </Link>
-                <h3 className='text-xl'>Docs</h3>
+                <h3 className='text-xl'>Live-Docs</h3>
             </div>
             <SearchInput/>
             <div className='flex gap-3 items-center pl-6'>
