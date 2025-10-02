@@ -1,7 +1,10 @@
 'use client'
+
 import { ClientSideSuspense } from "@liveblocks/react";
 import { useOthers, useSelf } from "@liveblocks/react/suspense";
+import { Separator } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
+import { User } from "lucide-react";
 
 const AVATAR_SIZE = 36;
 
@@ -20,10 +23,10 @@ const AvatarStack = () => {
   if (users.length === 0) return null;
 
   return (
-    <div className="flex items-center gap-2">
+    <>
       <div className="flex items-center">
         {currentUser && (
-          <div className="relative">
+          <div className="relative ml-2">
             <Avatar src={currentUser.info.avatar} name="You" />
           </div>
         )}
@@ -39,32 +42,38 @@ const AvatarStack = () => {
           })}
         </div>
       </div>
-      <div className="h-6 w-px bg-gray-300" />
-    </div>
+      <Separator className="h-6" />
+    </>
   );
 };
 
 interface AvatarProps {
-  src: string;
+  src?: string;
   name: string;
 }
 
 const Avatar = ({ src, name }: AvatarProps) => {
+  const isValidSrc = src && src.trim().length > 0;
+
   return (
     <div
       style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-      className="group -ml-2 first:ml-0 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400 hover:z-10 transition-all"
+      className="group -ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400"
     >
-      <div className="opacity-0 group-hover:opacity-100 absolute top-full py-1 px-2 text-white text-xs rounded-lg mt-2.5 z-10 bg-black whitespace-nowrap transition-opacity pointer-events-none">
+      <div className="opacity-0 group-hover:opacity-100 absolute top-full py-1 px-2 text-white text-xs rounded-lg mt-2.5 z-10 bg-black whitespace-nowrap transition-opacity">
         {name}
       </div>
-      <Image
-        alt={name}
-        src={src}
-        width={AVATAR_SIZE}
-        height={AVATAR_SIZE}
-        className="size-full rounded-full object-cover"
-      />
+      {isValidSrc ? (
+        <Image
+          alt={name}
+          src={src as string}
+          width={AVATAR_SIZE}
+          height={AVATAR_SIZE}
+          className="rounded-full object-cover"
+        />
+      ) : (
+        <User className="text-white" size={AVATAR_SIZE - 8} />
+      )}
     </div>
   );
 };
