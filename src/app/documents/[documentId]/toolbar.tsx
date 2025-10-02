@@ -445,14 +445,14 @@ const FontFamilyButton=()=>{
         {
             label:'Arial',value:"Arial,sans-serif"
         },
-        { label:'Times New Roman',value:"'Times New Roman',serif" },
-        { label:'Courier New',value:"'Courier New',monospace" },
-        { label:'Georgia',value:"Georgia,serif" },
-        { label:'Verdana',value:"Verdana,sans-serif" },
-        { label:'Tahoma',value:"Tahoma,sans-serif" },
-        { label:'Trebuchet MS',value:"'Trebuchet MS',sans-serif" },
-        { label:'Impact',value:"Impact,sans-serif" },
-        { label:'Comic Sans MS',value:"'Comic Sans MS',cursive" },
+        { label:'Times New Roman',value:"Times New Roman" },
+        { label:'Courier New',value:"Courier New" },
+        { label:'Georgia',value:"Georgia" },
+        { label:'Verdana',value:"Verdana" },
+        { label:'Tahoma',value:"Tahoma" },
+        { label:'Trebuchet MS',value:"Trebuchet MS" },
+        { label:'Impact',value:"Impact" },
+        { label:'Comic Sans MS',value:"Comic Sans MS" },
     ];
     return(
         <DropdownMenu>
