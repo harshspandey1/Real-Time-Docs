@@ -67,7 +67,7 @@ const Avatar=({src,name}:AvatarProps)=>{
             src={src}
               width={AVATAR_SIZE} 
                 height={AVATAR_SIZE} 
-            className="size-full rounded-full"
+            className="rounded-full object-cover"
             />
         </div>
     )
